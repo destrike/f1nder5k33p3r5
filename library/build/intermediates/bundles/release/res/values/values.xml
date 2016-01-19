@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mcam_action_icon_size">56dp</dimen>
+    <dimen name="mcam_action_icon_size_smaller">48dp</dimen>
+    <dimen name="mcam_content_inset">16dp</dimen>
+    <dimen name="mcam_content_inset_less">12dp</dimen>
+    <dimen name="mcam_regular_content_fontsize">14sp</dimen>
+    <dimen name="mcam_regular_title_fontsize">16sp</dimen>
+    <dimen name="mcam_toolbar_elevation">4dp</dimen>
+    <string name="mcam_defaultDuration">00:00</string>
+    <string name="mcam_error">Error</string>
+    <string name="mcam_no_audio_access">You haven\'t given access to your microphone; no audio will be recorded.</string>
+    <string name="mcam_permissions_needed">Permissions Needed</string>
+    <string name="mcam_portrait">Portrait</string>
+    <string name="mcam_portrait_warning">It\'s recommended that you record in landscape. Record in portrait?</string>
+    <string name="mcam_retry">RETRY</string>
+    <string name="mcam_use_video">USE VIDEO</string>
+    <string name="mcam_video_capture_unsupported">Your device does not support video capture.</string>
+    <string name="mcam_video_perm_warning">Permission to access your microphone and camera is needed, the camera will now close.</string>
+    <string name="mcam_yes">Yes</string>
+    <style name="MaterialCamera.CaptureActivity" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+</resources>
