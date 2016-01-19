@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.afollestad'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 4
+        versionName "0.2.0"
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.devbrackets.android:exomedia:2.5.0'
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.1@aar') {
+        transitive = true
+    }
+}
+
+// build a jar with source files
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    failOnError false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+// build a jar with javadoc
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.getDestinationDir()
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
